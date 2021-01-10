@@ -2,7 +2,7 @@ body {
   width: 100%;
   background-color: #E9EBEE;
   color: #1c1e21;
-
+  font-family: Helvetica;
   margin-top: 10%;
 }
 
@@ -56,7 +56,6 @@ body {
   background: rgb(212, 183, 17);
   cursor: pointer;
   color: white;
-  text-decoration:none;
 }
 
 .cart_name2
