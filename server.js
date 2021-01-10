@@ -16,8 +16,10 @@ app.set('view engine', 'hbs');
 
 //routes
 app.use('/', require('./routes/index'));
-app.use('/users', require('./routes/users'));
-
+app.use('/mainMenu', require('./routes/mainMenu'));
+app.use('/user', require('./routes/user'))
+app.use('/lib', require('./routes/lib'));
+app.use('/regUser', require('./routes/regUser'));
 
 const PORT = process.env.PORT || 6969;
 

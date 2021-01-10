@@ -4,7 +4,9 @@
       width: 100%;
       background-color: #E9EBEE;
       color: #1c1e21;
-      font-family: Helvetica;
+      
+      margin-top: 15%;
+      A {text-decoration: none;}
     }
 
     .list
@@ -54,8 +56,10 @@
       padding: 10px 20px;
       margin: 2%;
       display: inline-block;
-      
+      background-color: gainsboro;
+      color : black;
       cursor: pointer;
+      text-decoration:none;
       
     }  
 
