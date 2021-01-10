@@ -1,6 +1,15 @@
 const express = require('express');
+const expressLayouts = require('express-ejs-layouts');
+
+
+
 
 const app = express();
+
+
+//HBS
+app.use(expressLayouts);
+app.set('view engine', 'hbs');
 
 //routes
 app.use('/', require('./routes/index'));
