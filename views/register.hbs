@@ -2,23 +2,51 @@
  
 
 
-<link rel="stylesheet" href="/css/BorrowStyle.css">
+<link rel="stylesheet" href="/css/registerStyle.css">
 
 
-<div class = "list">
+<form action="/mainMenu/register" method="POST">
+  <div class = "list">
       <div class = "form1">
         <form>
-          <h1 class = "xUser"> Register</h1>
-          <h2 class = 'cart_name'>Cart</h2>
+          <h1 class = "xUser"> Register Page</h1>
           <div class = list>
-              <input type = "text", id ="shopping cart", placeholder = "book#x">
+
+            <tr>
+              <td><label id="email"><h4 class = "cart_name">Username: </h4></label></td>
+              <td><input id="username1" name="username" placeholder= "Username" type="name" required> </input></td>
+             </tr>
+
+            <tr>
+              <td><label id="email"><h4 class = "cart_name">Email: </h4></label></td>
+              <td><input id="email1" name="email" placeholder= "Email" type="email" required> </input></td>
+             </tr>
+
+             <tr>
+              <td><label id="pwd"><h4 class = "cart_name">Password: </h4></label></td>
+              <td><input id="pwd1" name="pwd" placeholder= "Password"type="password" required> </input></td>
+           </tr>
+
+           <tr>
+            <td><label id="cc"><h4 class = "cart_name">CC No.: </h4> </label></td>
+            <td><input id="cc1" name="cc" placeholder= "Credit Card No."type="text" required> </input></td>
+         </tr>
+
           </div>
-          <a class = "order"  href = "/mainMenu/register">Enter</a>
+
+          <span>
+          <button class = "order"  >Register</a>
           
-          <a class = "order" href= "/">Login</a>
+          
+        </span>
+        </form>
 
         
-        
-        </form>
+
+       
       </div>
-</div>    
+       <span>Already have an account? <a href="/">Login!</a></span>
+    </div>
+    
+</form>
+

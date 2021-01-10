@@ -5,6 +5,6 @@ const router = express.Router();
 router.get('/lib', (req, res) => res.render("librarian"));
 
 // Regular User Page
-router.get('/regUser', (req, res) => res.render("regUser"));
+router.get('/regUser', (req, res) => res.render("regularUser"));
 
 module.exports = router;

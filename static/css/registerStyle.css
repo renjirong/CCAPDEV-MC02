@@ -1,0 +1,66 @@
+body {
+  width: 100%;
+  background-color: #E9EBEE;
+  color: #1c1e21;
+ 
+  margin-top: 10%;
+}
+
+.list
+{
+  margin: auto;
+  width: 500px;
+  background-color: lightgrey;
+  border-radius: 4px 4px 0px 0px;
+  border: 0.5px solid #E8EAED;
+  font-size: 14px;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+.cart_name
+{
+  margin-left: 10px;
+  margin-bottom: -5px;
+}
+
+.xUser
+{
+  margin-left: 10px;
+  margin-bottom: -5px;
+}
+
+.list input
+{
+  width: 70%;
+  border: 0;
+  outline: none !important;
+  padding: 10px;
+  margin: 2%;
+  display: inline-block;
+}
+
+.form1
+{
+  margin-top: -10px;
+
+}
+
+.order
+{
+  border: 0;
+  outline: none !important;
+  padding: 10px 20px;
+  margin: 2%;
+  display: inline-block;
+  background: rgb(212, 183, 17);
+  cursor: pointer;
+  color: white;
+  text-decoration:none;
+}
+
+.cart_name2
+{
+  margin-left: 15px;
+  margin-bottom: -5px;
+}
