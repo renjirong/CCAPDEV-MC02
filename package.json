@@ -1,7 +1,7 @@
 {
-  "name": "CCAPDEV-MC02",
+  "name": "ccapdev-mc02",
   "version": "1.0.0",
-  "description": "",
+  "description": "CCAPDEV MP2",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,17 +9,18 @@
   },
   "dependencies": {
     "express": "*",
-    "express-handlebars": "*"
+    "express-handlebars": "^5.2.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/renjirong/CCAPDEV-MC02.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Group-5",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/renjirong/CCAPDEV-MC02/issues"
   },
-  "homepage": "https://github.com/renjirong/CCAPDEV-MC02#readme"
+  "homepage": "https://github.com/renjirong/CCAPDEV-MC02#readme",
+  "devDependencies": {}
 }
