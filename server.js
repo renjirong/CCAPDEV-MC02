@@ -7,6 +7,9 @@ const expressLayouts = require('express-ejs-layouts');
 const app = express();
 
 
+//add a static folder
+app.use(express.static('static'));
+
 //HBS
 app.use(expressLayouts);
 app.set('view engine', 'hbs');
