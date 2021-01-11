@@ -3,14 +3,6 @@ const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
 
-    first_name:{
-        type: String,
-        required: true,
-    },
-    last_name:{
-        type: String,
-        required: true,
-    },
     email:{
         type: String,
         required: true,
@@ -20,10 +12,25 @@ const UserSchema = new mongoose.Schema({
         required: true,
     },
     creditCard:{
-        type: Number,
+        type: String,
         required: true,
     },
+    userType:{
+        type: String,
+        required: true,
+    },
+
+    bookCount: {
+        type: Number,
+        required: false
+    },
+    dateReg:{
+        type: Date,
+        default: Date.now
+    }
+
     
+
 });
 
 const User = mongoose.model

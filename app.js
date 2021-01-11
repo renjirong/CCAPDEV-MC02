@@ -4,6 +4,11 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
+const passport = require('passport');
+
+
+//passport config
+require('./config/passport')(passport);
 
 
 //DB 
@@ -25,9 +30,10 @@ app.set('view engine', 'hbs');
 //middleware  
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false })); 
+app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(express.static('public'));
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 //routes
 app.use('/', require('./routes/index'));
