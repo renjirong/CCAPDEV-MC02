@@ -6,7 +6,36 @@ const mongoose = require('mongoose');
 // mongoose.connect(databaseURL, options);
 
 const BookSchema = new mongoose.Schema({
+    Title:{
+        type: String,
+        required: true,
+    },
+    Author:{
+        type: String,
+        required: true,
+    },
+    Genre:{
+        type: String,
+        required: true,
+    },
     
+
+    BookNo: {
+        type: Number,
+        required: true
+
+    },
+
+    Qty: {
+        type: Number,
+        required: true
+
+    },
+
+    dateReg:{
+        type: Date,
+        default: Date.now
+    }
 });
 
 const Books = mongoose.model('Books', BookSchema);

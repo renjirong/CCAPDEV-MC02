@@ -1,0 +1,47 @@
+
+ 
+
+
+<link rel="stylesheet" href="/css/registerStyle.css">
+
+<div class = "list">
+      <div class = "form1">
+        <form action = "/lib/addBook" method = "POST">
+          <h1 class = "xUser"> Add Books</h1>
+          <div class = list>
+
+            <tr>
+              <td><label id="title"><h4 class = "cart_name">Title: </h4></label></td>
+              <td><input id="title1" name="title" placeholder= "Title" type="text" required> </input></td>
+             </tr>
+
+            <tr>
+              <td><label id="author"><h4 class = "cart_name">Author: </h4></label></td>
+              <td><input id="author1" name="author" placeholder= "Author" type="text" required> </input></td>
+             </tr>
+
+             <tr>
+              <td><label id="genre"><h4 class = "cart_name">Genre: </h4></label></td>
+              <td><input id="genre1" name="genre" placeholder= "Genre"type="text" required> </input></td>
+           </tr>
+
+           <tr>
+            <td><label id="bNo"><h4 class = "cart_name">Book No.: </h4> </label></td>
+            <td><input id="bNo1" name="bNo" placeholder= "Book No."type="text" required> </input></td>
+         </tr>
+
+         <tr>
+          <td><label id="qty"><h4 class = "cart_name">Quantity: </h4> </label></td>
+          <td><input id="qty1" name="qty" placeholder= "Quantity"type="text" required> </input></td>
+       </tr>
+
+          </div>
+          <button class = "order"> Confirm</button>
+          <span>
+        <br>
+          <a href = "/lib/editBooksDB">Back</a>
+          
+          </span>
+        </form>
+      </div>
+    </div>

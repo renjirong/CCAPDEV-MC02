@@ -26,14 +26,17 @@ app.use(expressLayouts);
 app.set('view engine', 'hbs');
 
 
+//passport middlewear
+app.use(passport.initialize());
+app.use(passport.session());
 
 //middleware  
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(express.static('public'));
-app.use(passport.initialize());
-app.use(passport.session());
+
+
 
 //routes
 app.use('/', require('./routes/index'));

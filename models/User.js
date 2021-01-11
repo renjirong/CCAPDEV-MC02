@@ -15,14 +15,11 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    userType:{
-        type: String,
-        required: true,
-    },
+    
 
     bookCount: {
         type: Number,
-        required: false
+        default: 0
     },
     dateReg:{
         type: Date,

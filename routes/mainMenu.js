@@ -22,7 +22,7 @@ router.get('/userExists', (req, res) => res.render("userExists"));
 router.get('/regSuccess', (req, res) => res.render("regSuccess"));
 
 router.post('/register', (req,res) => {
-    const {username, email, pwd, cc} = req.body;
+    const { email, pwd, cc} = req.body;
     
     User.findOne({ email: email })
         .then(user => {
@@ -41,10 +41,10 @@ router.post('/register', (req,res) => {
                     email: email,
                     password: pwd,
                     creditCard: cc,
-                    userType: "regular"
+                    
                 
                 });
-                console.log(newUser.password)
+                
                 
                 
                 bcrypt.genSalt(10, (err,salt) => 
@@ -69,19 +69,33 @@ router.post('/register', (req,res) => {
  
 //login handler
 router.post("/login", (req,res, next) => {
-    console.log(res.user())
+    
+
+
+    
+
     passport.authenticate('local', {
         successRedirect: '/login/regUser',
-        failureRedirect: 'login'
+        failureRedirect: '/mainMenu/login'
         
     })(req, res, next);
 });
 
 
 router.post("/libLogin", (req,res) => {
-    passport.authenticate('local', ()=> {
-        successRedirect: ''
-    });
+    const { username, password} = req.body;
+    console.log(username);
+    console.log(password);
+    
+    if(username == "admin" && password == "abcd1234"){
+        
+        res.redirect("/login/lib")
+    }
+    else{
+        res.redirect("/mainMenu/libLogin")
+    }
+    
+    
 });
 
 module.exports = router;
