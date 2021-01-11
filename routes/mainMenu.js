@@ -72,13 +72,13 @@ router.post("/login", (req,res, next) => {
     
 
 
-    
+    res.redirect('/login/regUser')
 
-    passport.authenticate('local', {
-        successRedirect: '/login/regUser',
-        failureRedirect: '/mainMenu/login'
+    // passport.authenticate('local', {
+    //     successRedirect: '/login/regUser',
+    //     failureRedirect: '/mainMenu/login'
         
-    })(req, res, next);
+    // })(req, res, next);
 });
 
 

@@ -16,6 +16,7 @@ const UserSchema = new mongoose.Schema({
         required: true,
     },
     
+    
 
     bookCount: {
         type: Number,
@@ -24,9 +25,44 @@ const UserSchema = new mongoose.Schema({
     dateReg:{
         type: Date,
         default: Date.now
-    }
+    },
 
-    
+    Books: [
+
+        {
+            Title:{
+                type: String,
+                required: true,
+            },
+            Author:{
+                type: String,
+                required: true,
+            },
+            Genre:{
+                type: String,
+                required: true,
+            },
+            
+        
+            BookNo: {
+                type: Number,
+                required: true
+        
+            },
+        
+            Qty: {
+                type: Number,
+                required: true
+        
+            },
+        
+            dateReg:{
+                type: Date,
+                default: Date.now
+            }
+        }
+
+    ]
 
 });
 
