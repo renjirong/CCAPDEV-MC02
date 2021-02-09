@@ -20,8 +20,10 @@ body {
 
 .cart_name
 {
-  margin-left: 10px;
-  margin-bottom: -5px;
+      padding-left: 10px;
+      
+      width: 100px;
+      
 }
 
 .xUser
@@ -35,8 +37,8 @@ body {
   width: 70%;
   border: 0;
   outline: none !important;
-  padding: 10px;
-  margin: 2%;
+  padding: 5px;
+ 
   display: inline-block;
 }
 

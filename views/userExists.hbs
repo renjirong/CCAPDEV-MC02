@@ -1,4 +1,63 @@
+<link rel="stylesheet" href="/css/registerStyle.css">
 
 
+<form action="/mainMenu/register" method="POST">
+  <div class = "list">
+      <div class = "form1">
+        <h2 style = "margin: 10px;">User Already Exists. <a href="/mainMenu/login" class = "Back">Login</a></h2>
+        <form>
+          <h1 class = "xUser"> Register Page</h1>
+          <div class = list>
 
-<h2>User Already Exists. <a href="/mainMenu/register" class = "Back">Go Back</a></h2>
+            <label ><h4 class = "cart_name">Name: </h4></label>
+            <br>
+            <tr>
+              <td><label id="email"><h5 class = "cart_name">First: </h5></label></td>
+              <td><input name="fName" placeholder= "First Name" required> </input></td>
+            </tr>
+
+            <br>
+
+            
+            <tr>
+              <td></td><label id="email"><h4 class = "cart_name">Last:</h4></label></td>
+              <td><input  name="lName" placeholder= "Last Name" required> </input></td>
+              
+            </tr>      
+                  
+            <br>  
+            <label ><h4 class = "cart_name">Login Credentials: </h4></label>
+            <br>  
+
+            <tr>
+              <td><label id="email"><h5 class = "cart_name">Email: </h5></label></td>
+              <td><input  name="email" placeholder= "Email" type="email" required> </input></td>
+            </tr>
+
+            <br>
+
+            <tr>
+              <td><label id="pwd"><h5 class = "cart_name">Password: </h5></label></td>
+              <td><input  name="pwd" placeholder= "Password"type="password" required> </input></td>
+            </tr>
+
+            <br>
+
+            <tr>
+              <td><label id="cc"><h5 class = "cart_name">CC No.: </h5> </label></td>
+              <td><input  name="cc" placeholder= "Credit Card No."type="text" required> </input></td>
+            </tr>
+          </div>
+
+          <span>
+          <button style="margin-left: 10px; margin-top: 5px;"class="btn btn-primary">Register</button>
+          <div>
+          <h4 class = "cart_name2">Already have an account?<a href="/mainMenu/login">Login</a> </h4>
+          <h5 class = "cart_name2"><a href="/">Cancel Register</a> </h5>
+          </div>
+          </span>
+        </form>
+      </div>
+    </div>
+    
+</form>

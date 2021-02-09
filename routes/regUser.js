@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const renderBooks = require('../controller/renderBorrowedBooks');
+
 
 // borrowBooks Page
-router.get('/borrowBooks', (req, res) => res.render("borrowBooks"));
+router.get('/borrowBooks', renderBooks.render_index);
 
 // returnBooks Page
 router.get('/returnBooks', (req, res) => res.render("returnBooks"));

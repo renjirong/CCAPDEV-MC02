@@ -16,11 +16,14 @@ const UserSchema = new mongoose.Schema({
         required: true,
     },
     
-    
+    firstName:{
+        type: String,
+        required: true,
+    },
 
-    bookCount: {
-        type: Number,
-        default: 0
+    lastName:{
+        type: String,
+        required: true,
     },
     dateReg:{
         type: Date,

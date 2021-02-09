@@ -4,11 +4,10 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
-const passport = require('passport');
 
 
-//passport config
-require('./config/passport')(passport);
+
+
 
 
 //DB 
@@ -26,9 +25,7 @@ app.use(expressLayouts);
 app.set('view engine', 'hbs');
 
 
-//passport middlewear
-app.use(passport.initialize());
-app.use(passport.session());
+
 
 //middleware  
 app.use(bodyParser.json());

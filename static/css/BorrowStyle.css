@@ -1,6 +1,7 @@
 
 
     body {
+      zoom: 130%;
       width: 100%;
       background-color: #E9EBEE;
       color: #1c1e21;
@@ -35,12 +36,7 @@
 
     .list input
     {
-      width: 73%;
-      border: 0;
-      outline: none !important;
-      padding: 10px;
-      margin: 2%;
-      display: inline-block;
+      
     }
 
     .form1

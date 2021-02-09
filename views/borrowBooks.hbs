@@ -7,13 +7,18 @@
 
 <div class = "list">
       <div class = "form1">
+        {{#each books}}
+          <option name = "option" value={{BookNo}}>{{this.Title}}</option>
+          <option name = "option" value={{BookNo}}>{{this.Author}}</option>
+          <option name = "option" value={{BookNo}}>{{this.Genre}}</option>
+          <option name = "option" value={{BookNo}}>{{this.Qty}}</option>
+        {{/each}}
         <form>
           <h1 class = "xUser">Borrow Books</h1>
-          <h2 class = 'cart_name'>Cart</h2>
-          <div class = list>
-              <input type = "text", id ="shopping cart", placeholder = "book#x">
+
+   
           </div>
-          <a class = "order"  href = "/regUser/borrowBooks">Confirm</a>
+          
           
           <a class = "order" href= "/login/regUser">Back</a>
 

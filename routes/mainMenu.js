@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const passport = require('passport');
+
 
 
 //User model
 const User = require('../models/User');
+
+
 
 // Login Page
 router.get('/login', (req, res) => res.render("login"));
@@ -22,8 +24,10 @@ router.get('/userExists', (req, res) => res.render("userExists"));
 router.get('/regSuccess', (req, res) => res.render("regSuccess"));
 
 router.post('/register', (req,res) => {
-    const { email, pwd, cc} = req.body;
+    const { fName, lName, email, pwd, cc} = req.body;
     
+    
+
     User.findOne({ email: email })
         .then(user => {
             if(user){
@@ -32,19 +36,18 @@ router.post('/register', (req,res) => {
 
             }
             else{
-
-
-
                 const newUser = new User({
-                    
+
+                    firstName: fName,  
+                    lastName: lName,
                     email: email,
                     password: pwd,
                     creditCard: cc,
                     
-                
+                       
                 });
                 
-                
+                console.log(newUser)
                 
                 bcrypt.genSalt(10, (err,salt) => 
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -54,38 +57,53 @@ router.post('/register', (req,res) => {
                         //save user
                         newUser.save()
                         .then(user => {
-                            res.redirect('/');
+                            res.redirect('regSuccess');
                         })
                         .catch(err => console.log(err));
 
                     })) 
-                    res.redirect('regSuccess')
+                    
             }
-
         });
     
 });
  
 //login handler
 router.post("/login", (req,res, next) => {
+    const { email, password} = req.body;
     
 
+    User.findOne({ email: email })
+        .then(user => {
+            if(user){
+                
+                if(bcrypt.compareSync(password,user.password)){
+                   
+                    
 
-    res.redirect('/login/regUser')
+                    res.redirect('/login/regUser')
+                }
+                else
+                    console.log("err")
+            }
+            else
+                console.log("err")
+            
+        });
 
-    // passport.authenticate('local', {
-    //     successRedirect: '/login/regUser',
-    //     failureRedirect: '/mainMenu/login'
-        
-    // })(req, res, next);
+   
+
+    
+   // 
 });
 
 
 router.post("/libLogin", (req,res) => {
     const { username, password} = req.body;
-    console.log(username);
-    console.log(password);
-    
+     console.log(req.body)
+     console.log(username);
+     console.log(password);
+   
     if(username == "admin" && password == "abcd1234"){
         
         res.redirect("/login/lib")
@@ -96,5 +114,7 @@ router.post("/libLogin", (req,res) => {
     
     
 });
+
+
 
 module.exports = router;
