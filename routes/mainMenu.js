@@ -30,7 +30,6 @@ router.post('/register', (req,res) => {
                 
                 res.redirect('userExists')
 
-                
             }
             else{
 
