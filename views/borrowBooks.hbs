@@ -6,20 +6,32 @@
 
 
 <div class = "list">
+  <h1 style = "margin-bottom: 10px" class = "xUser">Borrow Books:</h1>
       <div class = "form1">
+       
+
         {{#each books}}
-          <option name = "option" value={{BookNo}}>{{this.Title}}</option>
-          <option name = "option" value={{BookNo}}>{{this.Author}}</option>
-          <option name = "option" value={{BookNo}}>{{this.Genre}}</option>
-          <option name = "option" value={{BookNo}}>{{this.Qty}}</option>
+          
+          
+          <span  class = "books" name = "option" value={{this.Title}}>Title: {{this.Title}}</span>
+          <span  class = "books" name = "option" value={{this.Author}}>Author: {{this.Author}}</span>
+          <span  class = "books" name = "option" value={{this.Genre}}>Genre: {{this.Genre}}</span>
+          <span  class = "books" name = "option" value={{this.BookNo}}>Book No.: {{this.BookNo}}</span>
+          <span  class = "books" name = "option" value={{this.Qty}}>Quantity: {{this.Qty}}</span>
+          <br>
+          
+
         {{/each}}
-        <form>
-          <h1 class = "xUser">Borrow Books</h1>
+         <form method="post" action="/regUser/borrow">
+          
 
    
           </div>
+          <label style = "margin-left: 10px">Book No.</label>
+          <input style = "margin-left: 5px" type = "text" name = "BookNo">
           
-          
+          <button>Borrow</button>
+
           <a class = "order" href= "/login/regUser">Back</a>
 
         

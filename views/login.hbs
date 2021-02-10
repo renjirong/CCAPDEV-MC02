@@ -1,28 +1,30 @@
 <link rel="stylesheet" href="/css/BorrowStyle.css">
 
-<form  method="post" action="/mainMenu/login">
-  <form>
-    
+<form  action="/verify" method="post" >
+  
+        {{#if error}}
+          <p> Username or password is incorrect </p>
+        {{/if}}
         <legend>Sign In</legend>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
+          <input type="email" name="username" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Email" required>
           </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+          <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
         </div>
         
       
-          <button  class="btn btn-primary">Login</button>
+          <button  class="btn btn-primary" value = "Login">Login</button>
 
     
                 
         <p>
               <h4 class = "cart_name2">Don't have an account? <a href="/mainMenu/register">Register Now!</a> </h4>
-              <h5 class = "cart_name2"><a href="/">Cancel Login</a> </h5>
+              <h5 class = "cart_name2"><a href="/mainMenu/libLogin">Librarian Login</a> </h5>
         </p> 
-  </form>
+  
   
 </form>
 

@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Book = require('../models/Books');
+const libController = require('../controller/libController');
+const controller = require('../controller/renderUsers');
 
 
 // Edit Book Details Page
@@ -13,87 +15,30 @@ router.get('/addBook', (req, res) => res.render("addBook"));
 router.get('/editBook', (req, res) => res.render("editBook"));
 
 // DELETE Books Details Page
-router.get('/deleteBook', (req, res) => res.render("deleteBook"));
+router.get('/deleteBook', libController.render_delete);
+
+router.post('/delete', libController.delete);
 
 // Render Books List Page
-router.get('/renderBookList', (req, res) => res.render("renderBookList"));
+router.get('/renderBookList', libController.render_list);
 
 
 //Add Books to DB
-router.post('/addBook', (req,res) => {
-    const { title, author, genre, bNo, qty} = req.body;
-    
-    Book.findOne({ BookNo : bNo })
-        .then(book => {
-            if(book){
-                res.redirect('addBook')
-            }
-            else{
-                const newBook = new Book({
-                    Title: title,
-                    Author: author,
-                    Genre: genre,
-                    BookNo: bNo,
-                    Qty: qty,
-                    
-                });
-               
-                newBook.save()
-                .then(book => {
-                    res.redirect('addBook')
-                })
-                .catch(err => console.log(err));
-  
-            }
-
-        });
-    
-});
+router.post('/addBook', libController.addBook);
     
     
 //Edit Books from DB
-router.post('/editBook', (req,res) =>{
-    const { title, author, genre, bNo, qty} = req.body;
-    
-    Book.findOne({BookNo: bNo})
-        .then(book =>{
-            if(!book){
-                res.redirect('editBook')
-            }
-            else{
-                const updateBook = new Book({
-                    Title: title,
-                    Author: author,
-                    Genre: genre,
-                    BookNo: bNo,
-                    Qty: qty,
-                })
-                
-                // Book.updateOne({BookNo: bNo}, {$set : updateBook })
-                // console.log(Book.updateOne({BookNo: bNo}, {$set : updateBook }));
-                Book.find({BookNo : bNo})
-                    .then(book => {
-                        res.redirect('editBook')
-                    })
-                    .catch(err => console.log(err));
-                
-                
-
-            }
-        })
-    
-});     
+router.post('/editBook', libController.editBooks); 
     
         
 
 
 
 // View User Page
-router.get('/viewUsers', (req, res) => res.render("viewUsers"));
+router.get('/viewUsers', controller.render_list);
 
 
-//borrow Request Page
-router.get('/borrowReq', (req, res) => res.render("borrowRequests"));
+
 
 
 module.exports = router;

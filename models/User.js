@@ -25,9 +25,16 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+
+
     dateReg:{
         type: Date,
         default: Date.now
+    },
+
+    Bill:{
+        type: Number,
+        default: 0
     },
 
     Books: [
@@ -53,16 +60,15 @@ const UserSchema = new mongoose.Schema({
         
             },
         
-            Qty: {
-                type: Number,
-                required: true
-        
-            },
-        
-            dateReg:{
+            dateBorrowed:{
                 type: Date,
                 default: Date.now
+            },
+            dateDue:{
+                type: Date
+                
             }
+            
         }
 
     ]

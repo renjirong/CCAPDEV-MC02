@@ -2,28 +2,40 @@
  
 
 
-<link rel="stylesheet" href="/css/registerStyle.css">
+<link rel="stylesheet" href="/css/BorrowStyle.css">
+
 
 <div class = "list">
+  <h1 style = "margin-bottom: 10px" class = "xUser">Delete Books:</h1>
       <div class = "form1">
-        <form action = "/lib/deleteBook" method = "POST">
-          <h1 class = "xUser"> Delete Books</h1>
-          <div class = list>
+       
 
-    
-         
-            <td><label id="bNo"><h4 class = "cart_name">Book No.: </h4> </label></td>
-            <td><input id="bNo1" name="bNo" placeholder= "Book No."type="text" required> </input></td>
-        
-
-
-          </div>
-          <button class = "order"> Confirm</button>
-          <span>
-        <br>
-          <a href = "/lib/editBooksDB">Back</a>
+        {{#each books}}
           
-          </span>
+          
+          <span  class = "books" name = "option" value={{this.Title}}>Title: {{this.Title}}</span>
+          <span  class = "books" name = "option" value={{this.Author}}>Author: {{this.Author}}</span>
+          <span  class = "books" name = "option" value={{this.Genre}}>Genre: {{this.Genre}}</span>
+          <span  class = "books" name = "option" value={{this.BookNo}}>Book No.: {{this.BookNo}}</span>
+          <span  class = "books" name = "option" value={{this.Qty}}>Quantity: {{this.Qty}}</span>
+          <br>
+          
+
+        {{/each}}
+         <form method="post" action="/lib/delete">
+          
+
+   
+          </div>
+          <label style = "margin-left: 10px">Book No.</label>
+          <input style = "margin-left: 5px" type = "text" name = "BookNo">
+          
+          <button>Delete</button>
+
+          <a class = "order" href= "/lib/editBooksDB">Back</a>
+
+        
+        
         </form>
       </div>
-    </div>
+</div>    

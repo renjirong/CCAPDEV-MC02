@@ -7,17 +7,27 @@
 
 <div class = "list">
       <div class = "form1">
-        <form>
-          <h1 class = "xUser"> Welcome xUser</h1>
+        <form method = "post" action = "/regUser/return">
+          <h1 class = "xUser"> Welcome {{fName}} {{lName}}</h1>
           <span>
           <h2 class = 'cart_name'>List of Borrowed books</h2>
           <div class = list>
-            <h4 class = 'cart_name'>Date borrowed: </h4>
-            <div>
-              <h4 class = 'cart_name'>Date due: </h4>
-            </div>
-              <input type = "text", id ="list_bb", placeholder = "book#x">
-              <a class = "order">Return </a>
+            {{#each books}}
+          
+          
+            <span  class = "books" name = "option" value={{this.Title}}>Title: {{this.Title}}</span>
+            <span  class = "books" name = "option" value={{this.Author}}>Author: {{this.Author}}</span>
+            <span  class = "books" name = "option" value={{this.Genre}}>Genre: {{this.Genre}}</span>
+            <span  class = "books" name = "option" value={{this.BookNo}}>Book No.: {{this.BookNo}}</span>
+            <span  class = "books" name = "option" value={{this.dateBorrowed}}>Date Borrowed: {{this.dateBorrowed}}</span>
+            <span  class = "books" name = "option" value={{this.dateDue}}>Date Due: {{this.dateDue}}</span>
+            <br>
+          
+
+            {{/each}}
+              <label style = "margin-left:10px">Book No.</label>
+              <input style = "margin-left:5px", name ="bookNo" type = "text", id ="list_bb", placeholder = "book#x">
+              <button class = "order">Return </button>
           </div>
         </span>
           <a class = "order" href = "/login/regUser">Back</a>

@@ -1,17 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const renderBooks = require('../controller/renderBorrowedBooks');
+const userController = require('../controller/userController');
 
 
 // borrowBooks Page
-router.get('/borrowBooks', renderBooks.render_index);
+router.get('/borrowBooks', userController.render_books);
+router.post('/borrow', userController.borrow_book)
 
 // returnBooks Page
-router.get('/returnBooks', (req, res) => res.render("returnBooks"));
-
+router.get('/returnBooks', userController.render_book_list);
+router.post('/return', userController.return_book);
 
 //view Bills page
-router.get('/bills', (req, res) => res.render("viewBills"));
+router.get('/bills', userController.render_bills);
+router.post('/pay', userController.pay_bills);
 module.exports = router;
 
 

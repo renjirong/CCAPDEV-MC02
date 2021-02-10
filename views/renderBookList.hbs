@@ -1,0 +1,33 @@
+
+ 
+
+
+<link rel="stylesheet" href="/css/BorrowStyle.css">
+
+
+<div class = "list">
+  <h1 style = "margin-bottom: 10px" class = "xUser">Book List:</h1>
+      <div class = "form1">
+       
+
+        {{#each books}}
+          
+          
+          <span  class = "books" name = "option" value={{this.Title}}>Title: {{this.Title}}</span>
+          <span  class = "books" name = "option" value={{this.Author}}>Author: {{this.Author}}</span>
+          <span  class = "books" name = "option" value={{this.Genre}}>Genre: {{this.Genre}}</span>
+          <span  class = "books" name = "option" value={{this.BookNo}}>Book No.: {{this.BookNo}}</span>
+          <span  class = "books" name = "option" value={{this.Qty}}>Quantity: {{this.Qty}}</span>
+          <br>
+          
+
+        {{/each}}
+         
+
+          <a class = "order" href= "/mainMenu/lib">Back</a>
+
+        
+        
+        </form>
+      </div>
+</div>    

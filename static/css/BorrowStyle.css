@@ -10,6 +10,11 @@
      
     }
 
+    .books{
+      display: flex;
+      padding-left: 20px;
+    }
+
     .list
     {
       margin: auto;

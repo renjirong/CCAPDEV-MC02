@@ -6,17 +6,17 @@
 
 <div class = "list">
       <div class = "form1">
-        <form>
-          <h1 class = "xUser"> Welcome xUser</h1>
+        <form method = "post" action = "/regUser/pay"> 
+          <h1  class = "xUser"> Welcome {{fName}} {{lName}}</h1>
           <span>
-          <h2 class = 'cart_name'>View Payment</h2>
+          
           <div class = list>
-            <h4 class = 'cart_name'>No. Days Due: </h4>
-            <div>
-              <h4 class = 'cart_name'>Payment: </h4>
-            </div>
-              <input type = "text", id ="list_bb", placeholder = "Book#x">
-              <a class = "order">Pay </a>
+          <h4 name = "debt" class = 'cart_name'>Payment Due:{{debt}} </h4>
+       
+          </div>
+          <label style = "margin-left: 10px">Input Amount</label>
+          <input style = "margin-left: 5px" name = "amount" type = "text", id ="list_bb", placeholder = "Amount">
+          <button class = "order">Pay </button>
           </div>
         </span>
           <a class = "order" href = "/login/regUser">Back</a>

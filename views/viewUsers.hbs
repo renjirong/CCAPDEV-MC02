@@ -11,14 +11,31 @@
           <h1 class = "xUser"> View Users</h1>
           <tr>
             <span>
-            <td><label id="title"><h4 class = "cart_name3">Username: UserX ,Bill: 0, Books borrowed: bookx 1/9/21 - 1/16/21, booky 1/10/21 - 1/7/21 </h4></label></td>
+            <td>
+              <label id="title">
+                <h4 class = "cart_name3">
+                  {{#each person}}
+
+                  <p style = "margin-left: 10px" >Email: {{this.email}}<br> Name: {{this.firstName}} {{this.lastName}}</p>
+                  
+                  <p style = "margin-left: 10px"> Bill: {{this.Bill}}</p>
+                  
+                  
+                  
+
+                  
+                  {{/each}}
+                  
+                  </h4>
+              </label>
+            </td>
           </span>
           </tr>
 
           </div>
 
           <span>
-          <a class = "order">Back</a>
+          <a class = "order" href = "/mainMenu/lib">Back</a>
           </span>
         </form>
       </div>
